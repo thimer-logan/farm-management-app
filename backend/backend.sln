@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrecisionFarming.Api", "PrecisionFarming.api\PrecisionFarming.Api.csproj", "{3E50903A-8DDB-49FC-8602-605E2562EC38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrecisionFarming.Application", "PrecisionFarming.Application\PrecisionFarming.Application.csproj", "{C2613796-F9A1-4272-A6D3-111440892B02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrecisionFarming.Domain", "PrecisionFarming.Domain\PrecisionFarming.Domain.csproj", "{ED128743-44BF-44F3-ADF0-F5C98156E89B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrecisionFarming.Infrastructure", "PrecisionFarming.Infrastructure\PrecisionFarming.Infrastructure.csproj", "{05D3F1FF-C6B6-4C3A-8114-8679C35FB81D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{3E50903A-8DDB-49FC-8602-605E2562EC38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E50903A-8DDB-49FC-8602-605E2562EC38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E50903A-8DDB-49FC-8602-605E2562EC38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2613796-F9A1-4272-A6D3-111440892B02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2613796-F9A1-4272-A6D3-111440892B02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2613796-F9A1-4272-A6D3-111440892B02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2613796-F9A1-4272-A6D3-111440892B02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED128743-44BF-44F3-ADF0-F5C98156E89B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED128743-44BF-44F3-ADF0-F5C98156E89B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED128743-44BF-44F3-ADF0-F5C98156E89B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED128743-44BF-44F3-ADF0-F5C98156E89B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05D3F1FF-C6B6-4C3A-8114-8679C35FB81D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05D3F1FF-C6B6-4C3A-8114-8679C35FB81D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05D3F1FF-C6B6-4C3A-8114-8679C35FB81D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05D3F1FF-C6B6-4C3A-8114-8679C35FB81D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
