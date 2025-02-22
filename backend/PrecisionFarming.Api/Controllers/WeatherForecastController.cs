@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace api.Controllers
+namespace PrecisionFarming.api.Controllers
 {
     [ApiController]
     [Route("[controller]")]

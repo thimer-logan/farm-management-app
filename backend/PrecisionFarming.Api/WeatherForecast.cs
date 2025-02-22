@@ -1,4 +1,4 @@
-namespace api
+namespace PrecisionFarming.api
 {
     public class WeatherForecast
     {
