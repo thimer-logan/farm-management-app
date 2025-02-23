@@ -1,0 +1,30 @@
+[
+  {
+    "Id": "D1337A54-FDDE-4E50-ACA3-6F682A8C497F",
+    "Name": "AAC Lariat Feed 2-Row",
+    "Distributor": "CANTERRA SEEDS LTD",
+    "Description": "Very high yield potential. Shorter than CDC Austenson with strong straw and excellent standability. Higher test weight and increased plumpness.",
+    "CropId": "2DB4EE88-2BED-4E64-A95D-0CF667F67370"
+  },
+  {
+    "Id": "29D51EB2-6DE5-49E1-8D8B-4BF87CD6A582",
+    "Name": "InVigor L330PC Hybrid",
+    "Distributor": "BASF/Invigor",
+    "Description": "Introducing InVigor L330PC an early maturing hybrid with excellent yield potential and strong standability. Coupled with our patented Pod Shatter Reduction technology, first generation clubroot resistance, strong standability, and the yield potential to exceed InVigor L233P all give InVigor L330PC potential across all growing zones.",
+    "CropId": "F29BF920-7509-4FEF-84CF-5C0F35617035"
+  },
+  {
+    "Id": "1297B0BE-A6EF-4670-A9B1-BEC0007E9AB0",
+    "Name": "CS ProStar Yellow",
+    "Distributor": "CANTERRA SEEDS",
+    "Description": "High yield potential with earlier maturity. Very high protein content",
+    "CropId": "70916E69-1003-4EFB-AC4E-5263DD3FF0C7"
+  },
+  {
+    "Id": "09BDF5E3-040C-4E8E-ABC4-E47A2E418D08",
+    "Name": "AAC Camrose VB",
+    "Distributor": "Nutrien Ag Solutions",
+    "Description": "Very high yields. Midge tolerance",
+    "CropId": "CA2E08EF-05C4-4855-A3A6-EE40E0AD77FF"
+  }
+]

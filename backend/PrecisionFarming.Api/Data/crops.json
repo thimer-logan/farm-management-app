@@ -1,0 +1,38 @@
+[
+  {
+    "Id": "7E3A5F05-5C67-4A77-AFAA-C1449EEB6693",
+    "Name": "Alfalfa"
+  },
+  {
+    "Id": "2DB4EE88-2BED-4E64-A95D-0CF667F67370",
+    "Name": "Barley"
+  },
+  {
+    "Id": "F29BF920-7509-4FEF-84CF-5C0F35617035",
+    "Name": "Canola"
+  },
+  {
+    "Id": "F25A2358-8B43-4A16-8379-8B0313179EC9",
+    "Name": "Corn"
+  },
+  {
+    "Id": "A936C5D8-2DD2-41E7-B071-68B78C5A48D0",
+    "Name": "Fababean"
+  },
+  {
+    "Id": "A31B7081-CA69-4548-A614-C9AFA1EA0197",
+    "Name": "Oats"
+  },
+  {
+    "Id": "70916E69-1003-4EFB-AC4E-5263DD3FF0C7",
+    "Name": "Peas"
+  },
+  {
+    "Id": "C7961535-9D7B-433D-9F4F-A458C7C6A3B6",
+    "Name": "Soybeans"
+  },
+  {
+    "Id": "CA2E08EF-05C4-4855-A3A6-EE40E0AD77FF",
+    "Name": "Wheat"
+  }
+]
