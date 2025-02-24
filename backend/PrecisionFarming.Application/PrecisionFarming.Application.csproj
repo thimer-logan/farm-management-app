@@ -6,4 +6,19 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Crop\Interfaces\" />
+    <Folder Include="Crop\Services\" />
+    <Folder Include="Field\Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NetTopologySuite" Version="2.5.0" />
+    <PackageReference Include="NetTopologySuite.IO.GeoJSON" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PrecisionFarming.Domain\PrecisionFarming.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
