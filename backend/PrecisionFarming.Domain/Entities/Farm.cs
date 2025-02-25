@@ -16,5 +16,7 @@ namespace PrecisionFarming.Domain.Entities
         public Guid OwnerId { get; set; }
 
         public virtual ICollection<Field> Fields { get; set; }
+
+        public virtual ICollection<FarmAccess> FarmAccesses { get; set; }
     }
 }

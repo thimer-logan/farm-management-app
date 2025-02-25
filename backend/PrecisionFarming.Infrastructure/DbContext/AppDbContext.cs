@@ -21,6 +21,7 @@ namespace PrecisionFarming.Infrastructure.DbContext
         public DbSet<FieldCrop> FieldsCrops { get; set; }
         public DbSet<Crop> Crops { get; set; }
         public DbSet<CropVariety> CropVarieties { get; set; }
+        public DbSet<FarmAccess> FarmAccesses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
