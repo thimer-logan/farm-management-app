@@ -7,5 +7,6 @@ namespace PrecisionFarming.Domain.Interfaces.Repositories
     /// </summary>
     public interface IFarmRepository : IRepository<Farm>
     {
+        Task<IEnumerable<Farm>> GetAllForUserAsync(Guid userId, params string[] includes);
     }
 }
