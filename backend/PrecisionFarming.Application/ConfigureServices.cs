@@ -12,6 +12,8 @@ namespace PrecisionFarming.Application
         {
             services.AddScoped<ICreateFarmService, CreateFarmService>();
             services.AddScoped<IGetFarmService, GetFarmService>();
+            services.AddScoped<IDeleteFarmService, DeleteFarmService>();
+            services.AddScoped<IUpdateFarmService, UpdateFarmService>();
 
             services.AddScoped<IJwtService, JwtService>();
             return services;

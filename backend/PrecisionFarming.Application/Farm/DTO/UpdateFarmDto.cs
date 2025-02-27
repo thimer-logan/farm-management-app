@@ -5,6 +5,9 @@ namespace PrecisionFarming.Application.Farm.DTO
     public class UpdateFarmDto
     {
         [Required]
+        public Guid Id { get; set; }
+
+        [Required]
         public string Name { get; set; }
 
         [Required]
