@@ -46,6 +46,11 @@ namespace PrecisionFarming.Infrastructure.Repositories
             return true;
         }
 
+        public async Task<bool> ExistsAsync(Guid id)
+        {
+            return await _context.Farms.AnyAsync(f => f.Id == id);
+        }
+
         public async Task<IEnumerable<Farm>> GetAllAsync(params string[] includes)
         {
             IQueryable<Farm> query = _context.Farms;

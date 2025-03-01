@@ -42,6 +42,11 @@ namespace PrecisionFarming.Infrastructure.Repositories
             return await _context.FarmAccesses.AnyAsync(f => f.FarmId == farmId && f.UserId == userId);
         }
 
+        public async Task<bool> ExistsAsync(Guid id)
+        {
+            return await _context.FarmAccesses.AnyAsync(f => f.Id == id);
+        }
+
         public async Task<IEnumerable<FarmAccess>> GetAllAsync(params string[] includes)
         {
             IQueryable<FarmAccess> query = _context.FarmAccesses;
