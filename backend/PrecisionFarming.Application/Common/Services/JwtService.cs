@@ -28,7 +28,7 @@ namespace PrecisionFarming.Application.Common.Services
                 new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()), // Subject
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()), // JWT unique id
                 new Claim(JwtRegisteredClaimNames.Iat, DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString()), // Issued at
-                new Claim(ClaimTypes.NameIdentifier, user.Email.ToString()), // Unique name identifier of the user
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()), // Unique name identifier of the user
                 new Claim(ClaimTypes.Name, user.FirstName.ToString()), // Name of the user
                 new Claim(ClaimTypes.Email, user.Email.ToString()), // Email of the user
             ];
