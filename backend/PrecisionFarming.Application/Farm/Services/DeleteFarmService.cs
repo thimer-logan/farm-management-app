@@ -7,12 +7,10 @@ namespace PrecisionFarming.Application.Farm.Services
     public class DeleteFarmService : IDeleteFarmService
     {
         private readonly IFarmRepository _farmRepository;
-        private readonly IFarmAccessRepository _farmAccessRepository;
 
-        public DeleteFarmService(IFarmRepository farmRepository, IFarmAccessRepository farmAccessRepository)
+        public DeleteFarmService(IFarmRepository farmRepository)
         {
             _farmRepository = farmRepository;
-            _farmAccessRepository = farmAccessRepository;
         }
 
         public async Task<bool> DeleteAsync(Guid id)

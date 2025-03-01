@@ -8,12 +8,10 @@ namespace PrecisionFarming.Application.Farm.Services
     public class GetFarmService : IGetFarmService
     {
         private readonly IFarmRepository _farmRepository;
-        private readonly IFarmAccessRepository _farmAccessRepository;
 
-        public GetFarmService(IFarmRepository farmRepository, IFarmAccessRepository farmAccessRepository)
+        public GetFarmService(IFarmRepository farmRepository)
         {
             _farmRepository = farmRepository;
-            _farmAccessRepository = farmAccessRepository;
         }
 
         public async Task<List<FarmDto>> GetAllAsync(Guid userId)

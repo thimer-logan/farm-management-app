@@ -10,14 +10,12 @@ namespace PrecisionFarming.Application.Farm.Services
     public class UpdateFarmService : IUpdateFarmService
     {
         private readonly IFarmRepository _farmRepository;
-        private readonly IFarmAccessRepository _farmAccessRepository;
         private readonly GeoJsonReader _geoJsonReader;
 
-        public UpdateFarmService(IFarmRepository farmRepository, IFarmAccessRepository farmAccessRepository)
+        public UpdateFarmService(IFarmRepository farmRepository)
         {
             _farmRepository = farmRepository;
             _geoJsonReader = new GeoJsonReader();
-            _farmAccessRepository = farmAccessRepository;
         }
 
         public async Task<FarmDto> UpdateAsync(Guid id, UpdateFarmDto input)
