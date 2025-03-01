@@ -20,22 +20,24 @@ namespace PrecisionFarming.Application.Farm.Services
             _farmAccessRepository = farmAccessRepository;
         }
 
-        public async Task<FarmDto> UpdateAsync(Guid userId, UpdateFarmDto input)
+        public async Task<FarmDto> UpdateAsync(Guid userId, Guid id, UpdateFarmDto input)
         {
-            if (!await _farmAccessRepository.HasAccessAsync(input.Id, userId, Domain.Enums.AccessType.Editor))
+            var existingFarm = await _farmRepository.GetAsync(id);
+            if (existingFarm == null)
+            {
+                throw new NotFoundException($"Farm not found with id {id}");
+            }
+
+            if (!await _farmAccessRepository.HasAccessAsync(id, userId, Domain.Enums.AccessType.Editor))
             {
                 throw new ForbiddenException("You don't have write access to this farm");
             }
 
             var geometry = _geoJsonReader.Read<Geometry>(input.Location);
-            var farm = new Domain.Entities.Farm
-            {
-                Id = input.Id,
-                Name = input.Name,
-                Location = (Point)geometry
-            };
+            existingFarm.Location = (Point)geometry;
+            existingFarm.Name = input.Name;
 
-            var updatedFarm = await _farmRepository.UpdateAsync(farm);
+            var updatedFarm = await _farmRepository.UpdateAsync(existingFarm);
             return updatedFarm.ToDto();
         }
     }

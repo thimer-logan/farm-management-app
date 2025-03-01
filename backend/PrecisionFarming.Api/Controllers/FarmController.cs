@@ -22,7 +22,7 @@ namespace PrecisionFarming.Api.Controllers
             _updateFarmService = updateFarmService;
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id:guid}")]
         public async Task<IActionResult> GetFarm(Guid id)
         {
             // Get the user id from the JWT token
@@ -96,8 +96,8 @@ namespace PrecisionFarming.Api.Controllers
             return NoContent();
         }
 
-        [HttpPut]
-        public async Task<IActionResult> UpdateFarm([FromBody] UpdateFarmDto input)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateFarm([FromRoute] Guid id, [FromBody] UpdateFarmDto input)
         {
             // Get the user id from the JWT token
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -114,7 +114,7 @@ namespace PrecisionFarming.Api.Controllers
                 return Problem(errorMessages);
             }
 
-            var farm = await _updateFarmService.UpdateAsync(Guid.Parse(userId), input);
+            var farm = await _updateFarmService.UpdateAsync(Guid.Parse(userId), id, input);
             return Ok(farm);
         }
     }

@@ -4,6 +4,6 @@ namespace PrecisionFarming.Application.Farm.Interfaces
 {
     public interface IUpdateFarmService
     {
-        Task<FarmDto> UpdateAsync(Guid userId, UpdateFarmDto input);
+        Task<FarmDto> UpdateAsync(Guid userId, Guid id, UpdateFarmDto input);
     }
 }
