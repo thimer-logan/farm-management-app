@@ -2,6 +2,6 @@
 {
     public interface IDeleteFarmService
     {
-        Task<bool> DeleteAsync(Guid userId, Guid id);
+        Task<bool> DeleteAsync(Guid id);
     }
 }

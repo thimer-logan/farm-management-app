@@ -22,20 +22,13 @@ namespace PrecisionFarming.Application.Farm.Services
             return farms.Select(f => f.ToDto()).ToList();
         }
 
-        public async Task<FarmDto?> GetByIdAsync(Guid userId, Guid id)
+        public async Task<FarmDto?> GetByIdAsync(Guid id)
         {
             var farm = await _farmRepository.GetAsync(id);
-
             if (farm == null)
             {
                 throw new NotFoundException($"Farm not found with id {id}");
             }
-
-            if (!await _farmAccessRepository.HasAccessAsync(id, userId, Domain.Enums.AccessType.Viewer))
-            {
-                throw new ForbiddenException("You don't have access to this farm");
-            }
-
 
             return farm?.ToDto();
         }

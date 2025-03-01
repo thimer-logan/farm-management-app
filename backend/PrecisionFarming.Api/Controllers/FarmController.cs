@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PrecisionFarming.Api.Authorization;
 using PrecisionFarming.Application.Farm.DTO;
 using PrecisionFarming.Application.Farm.Interfaces;
+using PrecisionFarming.Domain.Enums;
 using System.Security.Claims;
 
 namespace PrecisionFarming.Api.Controllers
@@ -23,6 +25,7 @@ namespace PrecisionFarming.Api.Controllers
         }
 
         [HttpGet("{id:guid}")]
+        [FarmAccess(AccessType.Viewer)]
         public async Task<IActionResult> GetFarm(Guid id)
         {
             // Get the user id from the JWT token
@@ -32,7 +35,7 @@ namespace PrecisionFarming.Api.Controllers
                 return Unauthorized();
             }
 
-            var farm = await _getFarmService.GetByIdAsync(Guid.Parse(userId), id);
+            var farm = await _getFarmService.GetByIdAsync(id);
             return Ok(farm);
         }
 
@@ -78,6 +81,7 @@ namespace PrecisionFarming.Api.Controllers
         }
 
         [HttpDelete("{id}")]
+        [FarmAccess(AccessType.Admin)]
         public async Task<IActionResult> DeleteFarm(Guid id)
         {
             // Get the user id from the JWT token
@@ -87,7 +91,7 @@ namespace PrecisionFarming.Api.Controllers
                 return Unauthorized();
             }
 
-            var result = await _deleteFarmService.DeleteAsync(Guid.Parse(userId), id);
+            var result = await _deleteFarmService.DeleteAsync(id);
             if (!result)
             {
                 return NotFound();
@@ -97,6 +101,7 @@ namespace PrecisionFarming.Api.Controllers
         }
 
         [HttpPut("{id}")]
+        [FarmAccess(AccessType.Editor)]
         public async Task<IActionResult> UpdateFarm([FromRoute] Guid id, [FromBody] UpdateFarmDto input)
         {
             // Get the user id from the JWT token
@@ -114,7 +119,7 @@ namespace PrecisionFarming.Api.Controllers
                 return Problem(errorMessages);
             }
 
-            var farm = await _updateFarmService.UpdateAsync(Guid.Parse(userId), id, input);
+            var farm = await _updateFarmService.UpdateAsync(id, input);
             return Ok(farm);
         }
     }
