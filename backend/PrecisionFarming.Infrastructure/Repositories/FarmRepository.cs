@@ -82,15 +82,8 @@ namespace PrecisionFarming.Infrastructure.Repositories
 
         public async Task<Farm> UpdateAsync(Farm item)
         {
-            var result = await _context.Farms.FirstOrDefaultAsync(f => f.Id == item.Id);
-            if (result == null)
-            {
-                throw new NotFoundException($"Farm not found with id {item.Id}");
-            }
-
-            result.Name = item.Name;
-            result.UpdatedAt = DateTime.UtcNow;
-            result.Location = item.Location;
+            item.UpdatedAt = DateTime.UtcNow;
+            _context.Farms.Update(item);
 
             await _context.SaveChangesAsync();
             return item;
