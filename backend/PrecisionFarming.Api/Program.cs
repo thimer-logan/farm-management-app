@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using PrecisionFarming.Api.Authorization;
 using PrecisionFarming.API.Middlewares;
 using PrecisionFarming.Application;
 using PrecisionFarming.Domain.Entities.Identity;
@@ -24,11 +26,6 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddApplicationServices();
-
-//builder.Services.AddDbContext<AppDbContext>(options =>
-//{
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), sql => sql.UseNetTopologySuite());
-//});
 
 builder.Services.AddIdentity<AppUser, AppRole>(options =>
 {
@@ -64,7 +61,14 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddAuthorization(options =>
 {
+    options.AddPolicy("FarmAccess", policy =>
+    {
+        policy.Requirements.Add(new FarmAccessRequirement());
+    });
 });
+
+builder.Services.AddScoped<IAuthorizationHandler, FarmAccessHandler>();
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
