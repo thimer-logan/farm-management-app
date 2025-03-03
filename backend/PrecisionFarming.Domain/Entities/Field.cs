@@ -19,5 +19,7 @@ namespace PrecisionFarming.Domain.Entities
 
         [ForeignKey(nameof(FarmId))]
         public virtual Farm Farm { get; set; }
+
+        public virtual ICollection<FieldCrop> FieldCrops { get; set; }
     }
 }
