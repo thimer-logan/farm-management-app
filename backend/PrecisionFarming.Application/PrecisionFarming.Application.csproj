@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="Crop\Interfaces\" />
     <Folder Include="Crop\Services\" />
-    <Folder Include="Field\Services\" />
   </ItemGroup>
 
   <ItemGroup>
