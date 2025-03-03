@@ -3,6 +3,8 @@ using PrecisionFarming.Application.Common.Interfaces;
 using PrecisionFarming.Application.Common.Services;
 using PrecisionFarming.Application.Farm.Interfaces;
 using PrecisionFarming.Application.Farm.Services;
+using PrecisionFarming.Application.Field.Interfaces;
+using PrecisionFarming.Application.Field.Services;
 
 namespace PrecisionFarming.Application
 {
@@ -14,6 +16,11 @@ namespace PrecisionFarming.Application
             services.AddScoped<IGetFarmService, GetFarmService>();
             services.AddScoped<IDeleteFarmService, DeleteFarmService>();
             services.AddScoped<IUpdateFarmService, UpdateFarmService>();
+
+            services.AddScoped<ICreateFieldService, CreateFieldService>();
+            services.AddScoped<IGetFieldService, GetFieldService>();
+            services.AddScoped<IDeleteFieldService, DeleteFieldService>();
+            services.AddScoped<IUpdateFieldService, UpdateFieldService>();
 
             services.AddScoped<IJwtService, JwtService>();
             return services;
