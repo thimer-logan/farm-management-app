@@ -7,8 +7,7 @@ namespace PrecisionFarming.Application.Field.DTO
         [Required]
         public string Name { get; set; }
 
-        [Required]
-        public decimal Area { get; set; }
+        public decimal? Area { get; set; }
 
         [Required]
         public string Boundary { get; set; }

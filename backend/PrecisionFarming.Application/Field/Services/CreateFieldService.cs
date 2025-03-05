@@ -20,16 +20,19 @@ namespace PrecisionFarming.Application.Field.Services
         public async Task<FieldDto> CreateAsync(Guid farmId, CreateFieldDto input)
         {
             var geometry = _geoJsonReader.Read<Geometry>(input.Boundary);
+            var polygon = (Polygon)geometry;
+
+            decimal area = input.Area ?? (decimal)polygon.Area;
+
             var field = new Domain.Entities.Field
             {
                 FarmId = farmId,
                 Name = input.Name,
-                Area = input.Area,
-                Boundary = (Polygon)geometry
+                Area = area,
+                Boundary = polygon
             };
 
             var newField = await _fieldRepository.CreateAsync(field);
-
             return newField.ToDto();
         }
     }

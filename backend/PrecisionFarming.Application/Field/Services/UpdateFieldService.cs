@@ -29,7 +29,7 @@ namespace PrecisionFarming.Application.Field.Services
             var geometry = _geoJsonReader.Read<Geometry>(input.Boundary);
             existingField.Boundary = (Polygon)geometry;
             existingField.Name = input.Name;
-            existingField.Area = input.Area;
+            existingField.Area = input?.Area ?? (decimal)existingField.Boundary.Area;
 
             var updatedField = await _fieldRepository.UpdateAsync(existingField);
             return updatedField.ToDto();
