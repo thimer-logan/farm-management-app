@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Crop\DTO\" />
     <Folder Include="Crop\Interfaces\" />
     <Folder Include="Crop\Services\" />
   </ItemGroup>
