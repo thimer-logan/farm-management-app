@@ -40,8 +40,10 @@ namespace PrecisionFarming.Api.Controllers
 
         [HttpPost]
         [FarmAccess(AccessType.Editor, "farmId")]
-        public async Task<IActionResult> CreateFieldCrop([FromBody] CreateFieldCropDto input)
+        public async Task<IActionResult> CreateFieldCrop(Guid fieldId, [FromBody] CreateFieldCropDto input)
         {
+            input.FieldId = fieldId;
+
             if (!ModelState.IsValid)
             {
                 string errorMessages = string.Join(" | ", ModelState.Values
@@ -55,8 +57,10 @@ namespace PrecisionFarming.Api.Controllers
 
         [HttpPut("{id:guid}")]
         [FarmAccess(AccessType.Editor, "farmId")]
-        public async Task<IActionResult> UpdateFieldCrop(Guid id, [FromBody] UpdateFieldCropDto input)
+        public async Task<IActionResult> UpdateFieldCrop(Guid fieldId, Guid id, [FromBody] UpdateFieldCropDto input)
         {
+            input.FieldId = fieldId;
+
             if (!ModelState.IsValid)
             {
                 string errorMessages = string.Join(" | ", ModelState.Values
@@ -73,7 +77,7 @@ namespace PrecisionFarming.Api.Controllers
         public async Task<IActionResult> DeleteFieldCrop(Guid id)
         {
             await _deleteFieldCropService.DeleteAsync(id);
-            return Ok();
+            return NoContent();
         }
     }
 }
