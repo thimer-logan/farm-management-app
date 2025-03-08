@@ -20,6 +20,16 @@ namespace PrecisionFarming.Infrastructure.Repositories
             item.CreatedAt = DateTime.UtcNow;
             _context.FieldsCrops.Add(item);
             await _context.SaveChangesAsync();
+
+            // Load related entities
+            await _context.Entry(item)
+                          .Reference(fc => fc.Variety)
+                          .LoadAsync();
+
+            await _context.Entry(item.Variety)
+                          .Reference(cv => cv.Crop)
+                          .LoadAsync();
+
             return item;
         }
 
@@ -80,6 +90,16 @@ namespace PrecisionFarming.Infrastructure.Repositories
             _context.FieldsCrops.Update(item);
 
             await _context.SaveChangesAsync();
+
+            // Load related entities
+            await _context.Entry(item)
+                          .Reference(fc => fc.Variety)
+                          .LoadAsync();
+
+            await _context.Entry(item.Variety)
+                          .Reference(cv => cv.Crop)
+                          .LoadAsync();
+
             return item;
         }
     }

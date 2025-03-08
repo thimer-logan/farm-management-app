@@ -20,7 +20,7 @@ namespace PrecisionFarming.Application.FieldCrop.Services
                 throw new ArgumentException("Field id cannot be empty");
             }
 
-            var fieldCrops = await _fieldCropRepository.GetAllByFieldIdAsync(fieldId);
+            var fieldCrops = await _fieldCropRepository.GetAllByFieldIdAsync(fieldId, "Variety", "Variety.Crop");
             return fieldCrops.Select(fc => fc.ToDto());
         }
 
@@ -31,7 +31,7 @@ namespace PrecisionFarming.Application.FieldCrop.Services
                 throw new ArgumentException("Field crop id cannot be empty");
             }
 
-            var fieldCrop = await _fieldCropRepository.GetAsync(id);
+            var fieldCrop = await _fieldCropRepository.GetAsync(id, "Variety", "Variety.Crop");
             return fieldCrop?.ToDto();
         }
     }

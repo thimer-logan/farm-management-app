@@ -1,4 +1,7 @@
-﻿namespace PrecisionFarming.Application.FieldCrop.DTO
+﻿using PrecisionFarming.Application.Crop.DTO;
+using PrecisionFarming.Application.Crop.Extensions;
+
+namespace PrecisionFarming.Application.FieldCrop.DTO
 {
     public class FieldCropDto
     {
@@ -10,13 +13,13 @@
 
         public Guid FieldId { get; set; }
 
-        public Guid CropVarietyId { get; set; }
-
         public DateTime? SowingDate { get; set; }
 
         public DateTime? HarvestDate { get; set; }
 
         public decimal? Yield { get; set; }
+
+        public CropVarietyBriefDto? CropVariety { get; set; }
     }
 
     public static class FieldCropDtoExtensions
@@ -29,10 +32,10 @@
                 CreatedAt = fieldCrop.CreatedAt,
                 UpdatedAt = fieldCrop.UpdatedAt,
                 FieldId = fieldCrop.FieldId,
-                CropVarietyId = fieldCrop.CropVarietyId,
                 SowingDate = fieldCrop.SowingDate,
                 HarvestDate = fieldCrop.HarvestDate,
-                Yield = fieldCrop.Yield
+                Yield = fieldCrop.Yield,
+                CropVariety = fieldCrop.Variety?.ToBriefDto()
             };
         }
     }
