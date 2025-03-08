@@ -7,12 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Crop\DTO\" />
-    <Folder Include="Crop\Interfaces\" />
-    <Folder Include="Crop\Services\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="NetTopologySuite" Version="2.5.0" />
     <PackageReference Include="NetTopologySuite.IO.GeoJSON" Version="4.0.0" />
   </ItemGroup>

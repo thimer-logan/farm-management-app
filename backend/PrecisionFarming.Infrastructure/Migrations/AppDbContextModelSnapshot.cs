@@ -144,7 +144,7 @@ namespace PrecisionFarming.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Crops");
+                    b.ToTable("Crops", (string)null);
 
                     b.HasData(
                         new
@@ -234,7 +234,7 @@ namespace PrecisionFarming.Infrastructure.Migrations
 
                     b.HasIndex("CropId");
 
-                    b.ToTable("CropVarieties");
+                    b.ToTable("CropVarieties", (string)null);
 
                     b.HasData(
                         new
@@ -301,7 +301,7 @@ namespace PrecisionFarming.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Farms");
+                    b.ToTable("Farms", (string)null);
                 });
 
             modelBuilder.Entity("PrecisionFarming.Domain.Entities.FarmAccess", b =>
@@ -331,7 +331,7 @@ namespace PrecisionFarming.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("FarmAccesses");
+                    b.ToTable("FarmAccesses", (string)null);
                 });
 
             modelBuilder.Entity("PrecisionFarming.Domain.Entities.Field", b =>
@@ -365,7 +365,7 @@ namespace PrecisionFarming.Infrastructure.Migrations
 
                     b.HasIndex("FarmId");
 
-                    b.ToTable("Fields");
+                    b.ToTable("Fields", (string)null);
                 });
 
             modelBuilder.Entity("PrecisionFarming.Domain.Entities.FieldCrop", b =>
@@ -402,7 +402,7 @@ namespace PrecisionFarming.Infrastructure.Migrations
 
                     b.HasIndex("FieldId");
 
-                    b.ToTable("FieldsCrops");
+                    b.ToTable("FieldsCrops", (string)null);
                 });
 
             modelBuilder.Entity("PrecisionFarming.Domain.Entities.Identity.AppRole", b =>

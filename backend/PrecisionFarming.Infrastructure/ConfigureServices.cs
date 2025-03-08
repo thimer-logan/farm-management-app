@@ -19,6 +19,9 @@ namespace PrecisionFarming.Infrastructure
             services.AddScoped<IFarmRepository, FarmRepository>();
             services.AddScoped<IFarmAccessRepository, FarmAccessRepository>();
             services.AddScoped<IFieldRepository, FieldRepository>();
+            services.AddScoped<IFieldCropRepository, FieldCropRepository>();
+            services.AddScoped<ICropRepository, CropRepository>();
+            services.AddScoped<ICropVarietyRepository, CropVarietyRepository>();
 
             return services;
         }
